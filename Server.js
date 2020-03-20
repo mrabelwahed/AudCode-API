@@ -1,4 +1,5 @@
 const express = require("express");
+const multer = require("multer");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const dbConnection = require("./database/connection");
