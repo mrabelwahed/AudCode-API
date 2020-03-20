@@ -10,4 +10,10 @@ router.post(
   episodeController.createEpisode
 );
 
+router.get(
+  "/",
+  joiSchemaValidation.validateQuery(episodeSchema.getAllEpisodesSchema),
+  episodeController.getAllEpisodes
+);
+
 module.exports = router;

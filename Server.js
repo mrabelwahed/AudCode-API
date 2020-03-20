@@ -20,9 +20,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/v1/episode", require("./routes/episodeRoutes"));
 
 //subsctack middle ware
-app.get("/", (req, res, next) => {
-  res.send("hello Audcode");
-});
+// app.get("/", (req, res, next) => {
+//   res.send("hello Audcode");
+// });
 
 app.listen(PORT, error => {
   console.log(error);
