@@ -2,7 +2,9 @@ const mongoose = require("mongoose");
 const episodeSchema = new mongoose.Schema(
   {
     name: String,
-    author: String
+    author: String,
+    tags: Array,
+    content: String
   },
   {
     timestamps: true,
