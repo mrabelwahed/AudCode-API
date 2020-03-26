@@ -8,5 +8,6 @@ module.exports.createEpisodeSchema = Joi.object().keys({
 
 module.exports.getAllEpisodesSchema = Joi.object().keys({
   skip: Joi.string(),
-  limit: Joi.string()
+  limit: Joi.string(),
+  query: Joi.string()
 });
