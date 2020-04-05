@@ -4,7 +4,8 @@ const episodeSchema = new mongoose.Schema(
     name: String,
     author: String,
     tags: Array,
-    content: String
+    content: String,
+    url: String
   },
   {
     timestamps: true,

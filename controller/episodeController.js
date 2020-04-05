@@ -4,8 +4,12 @@ const constants = require("../constants/index");
 module.exports.createEpisode = async (req, res) => {
   let response = { ...constants.defaultServerResponse };
   try {
+    console.log(req.file);
     console.log(req.body);
-    const serviceResposne = await episodeServcie.createEpisode(req.body);
+    const serviceResposne = await episodeServcie.createEpisode(
+      req.body,
+      req.file.location
+    );
     response.status = 200;
     response.message = constants.episodeMessage.EPISODE_CREATED;
     response.body = serviceResposne;
