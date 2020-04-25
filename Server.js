@@ -18,7 +18,8 @@ app.use(express.urlencoded({ extended: true }));
 
 //episode routes
 app.use("/api/v1/episode", require("./routes/episodeRoutes"));
-
+//user routes
+app.use("/api/v1/user", require("./routes/userRoutes"));
 //subsctack middle ware
 // app.get("/", (req, res, next) => {
 //   res.send("hello Audcode");

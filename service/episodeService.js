@@ -6,17 +6,6 @@ module.exports.createEpisode = async (serviceData, location) => {
     console.log(location);
     serviceData.url = location;
     console.log(serviceData);
-    // upload(request, response, function(error) {
-    //   if (error) {
-    //     console.log(error);
-    //     //return response.redirect("/error");
-    //   }
-    //   console.log(url);
-    //   serviceData.url = url;
-    //   console.log("File uploaded successfully ");
-    //   //response.redirect("/success");
-    // });
-
     let episode = new Episode({ ...serviceData });
 
     let result = await episode.save();
