@@ -10,8 +10,11 @@ module.exports = {
   },
   userMessage: {
     SIGNUP_SUCCESS: "signup success",
+    LOGIN_SUCCESS: "login success",
     DUPLCATE_EMAIL: "user already exists with given email",
-    USER_FETCHED: "user fetched successfully"
+    USER_FETCHED: "user fetched successfully",
+    USER_NOT_FOUND: "User not found",
+    INVALID_PASSWORD: "invalid password"
   },
   requestValidationMessage: {
     BAD_REQUEST: "Invalid Fields"
