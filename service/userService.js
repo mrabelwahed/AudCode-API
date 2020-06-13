@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const jsonWebtoken = require("jsonwebtoken");
 const { formatMongoData } = require("../helper/dbHelper");
 
-module.exports.signup = async ({ email, password }) => {
+module.exports.signup = async ({ fullName, email, password }) => {
   try {
     const user = await User.findOne({ email });
     if (user) {
@@ -12,7 +12,7 @@ module.exports.signup = async ({ email, password }) => {
     }
     // insert new user in db
     password = await bcrypt.hash(password, 12);
-    const newUser = User({ email, password });
+    const newUser = User({ fullName, email, password });
     let result = await newUser.save();
     return formatMongoData(result);
   } catch (error) {
