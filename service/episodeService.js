@@ -19,7 +19,7 @@ module.exports.createEpisode = async (serviceData, location) => {
 module.exports.getAllEpisodes = async ({
   query = "",
   skip = 0,
-  limit = 10
+  limit = 10,
 }) => {
   try {
     if (query.length == 0) {

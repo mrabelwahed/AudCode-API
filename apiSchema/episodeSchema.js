@@ -4,11 +4,12 @@ module.exports.createEpisodeSchema = Joi.object().keys({
   author: Joi.string().required(),
   tags: Joi.array().required(),
   content: Joi.string().required(),
-  url: Joi.string()
+  contentUrl: Joi.string().required(),
+  url: Joi.string(),
 });
 
 module.exports.getAllEpisodesSchema = Joi.object().keys({
   skip: Joi.string(),
   limit: Joi.string(),
-  query: Joi.string()
+  query: Joi.string(),
 });
