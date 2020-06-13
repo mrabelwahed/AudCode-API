@@ -23,7 +23,7 @@ module.exports.signup = async ({ fullName, email, password }) => {
 
 module.exports.login = async ({ email, password }) => {
   try {
-    const user = await User.findOne({ email });
+    let user = await User.findOne({ email });
     if (!user) {
       throw new Error(constants.userMessage.USER_NOT_FOUND);
     }
@@ -34,7 +34,7 @@ module.exports.login = async ({ email, password }) => {
       process.env.SECRET_KEY || "my_secret_key",
       { expiresIn: "1d" }
     );
-    return { token };
+    return { token, user };
   } catch (error) {
     throw new Error(error);
     console.log("something went wrong : service : login", error);
