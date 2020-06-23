@@ -5,7 +5,7 @@ module.exports.createEpisode = async (serviceData, location) => {
   try {
     console.log(location);
     serviceData.url = location;
-    console.log(serviceData);
+    console.log("my test000000000", serviceData.url);
     let episode = new Episode({ ...serviceData });
 
     let result = await episode.save();

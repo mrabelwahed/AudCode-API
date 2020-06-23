@@ -16,7 +16,7 @@ const spacesEndpoint = new aws.Endpoint(endpoint);
 const s3 = new aws.S3({
   endpoint: spacesEndpoint,
   accessKeyId: "Y3J4H3XOGP5UCQW6V372",
-  secretAccessKey: "ekkQZVMasNx47rnoTA0mxk670xlKk7M32rfrbR3ftbw"
+  secretAccessKey: "ekkQZVMasNx47rnoTA0mxk670xlKk7M32rfrbR3ftbw",
 });
 const upload = multer({
   storage: multerS3({
@@ -24,19 +24,13 @@ const upload = multer({
     bucket: "audcode-space",
     acl: "public-read",
     contentType: multerS3.AUTO_CONTENT_TYPE,
-    key: function(request, file, cb) {
-      console.log(file);
-      url = file.originalname;
+    key: function (request, file, cb) {
+      //console.log(file);
+      url = "";
       cb(null, file.originalname);
-    }
-  })
+    },
+  }),
 });
-
-// const uploadEpisode = (req, res, next) => {
-//   console.log("upload!!!!");
-//   upload.single("episode");
-//   next();
-// };
 
 router.post(
   "/",
